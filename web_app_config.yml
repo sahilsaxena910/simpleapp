@@ -3,5 +3,10 @@
   hosts: all
   become: yes
   tasks:
-    - name: Deploy Simple web app
-      win_shell: docker run -p 80:80 sahilsaxena91096/seimens:latest
+    - name: Run Docker container
+      docker_container:
+        name: simple-app
+        image: sahilsaxena91096/seimens:latest
+        ports:
+          - "80:80"
+        detach: yes
