@@ -1,0 +1,7 @@
+---
+- name: Configure Web Application
+  hosts: all
+  become: yes
+  tasks:
+    - name: Deploy Simple web app
+      win_shell: docker run -p 80:80 sahilsaxena91096/seimens:latest
