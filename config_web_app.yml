@@ -4,10 +4,10 @@
   become: yes
   tasks:
      - name: Copy index.html to web server root
-        copy:
+       copy:
           src: /app/simpleapp/index.html
           dest: /usr/share/nginx/html/index.html 
-        notify: Restart Nginx 
+       notify: Restart Nginx 
 
   handlers:
     - name: Restart Nginx
